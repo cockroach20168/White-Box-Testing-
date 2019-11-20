@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HelloWorld.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo</a> &gt; <a href="index.source.html" class="el_package">com.test.jacoco</a> &gt; <span class="el_source">HelloWorld.java</span></div><h1>HelloWorld.java</h1><pre class="source lang-java linenums">package com.test.jacoco;
+
+import javax.imageio.event.IIOReadWarningListener;
+import java.util.Arrays;
+import java.util.Vector;
+
+
+public class HelloWorld {
+<span class="fc" id="L9">    public HelloWorld() {</span>
+
+<span class="fc" id="L11">    }</span>
+
+    public String Method1() {
+<span class="fc" id="L14">        return &quot;Hello World&quot;;</span>
+    }
+
+    public int Method2(int a, int b) {
+<span class="fc" id="L18">        return a + b;</span>
+    }
+    
+    public int Method3(int a, int b, int c){
+<span class="fc bfc" id="L22" title="All 6 branches covered.">    	if((a&gt;5&amp;&amp;b&lt;0)||c&gt;0) {</span>
+<span class="fc" id="L23">    		System.out.println(&quot;Condition 1&quot;);</span>
+    	}
+<span class="fc bfc" id="L25" title="All 4 branches covered.">    	else if(a&lt;5 &amp;&amp; c&lt;-2 ) {</span>
+<span class="fc" id="L26">    		System.out.println(&quot;Condition 2&quot;);</span>
+    	}
+    	else {
+<span class="fc" id="L29">    		System.out.println(&quot;Condition 3&quot;);</span>
+    	}
+<span class="fc" id="L31">    	return 0;</span>
+    }
+    public int Method4(int a, int b, int c, int d, float e) {
+<span class="fc bfc" id="L34" title="All 2 branches covered.">    	if(a == 0) {</span>
+<span class="fc" id="L35">    		return 0;</span>
+    	}
+<span class="fc" id="L37">    	int x = 0;</span>
+<span class="pc bpc" id="L38" title="1 of 6 branches missed.">    	if((a == b) || ((c == d) &amp;&amp; (bug(a)))) {</span>
+<span class="fc" id="L39">			 x = 1;</span>
+    	}
+<span class="fc" id="L41">    	e = 1/x;</span>
+<span class="fc" id="L42">    	return 0;</span>
+    }
+    public boolean bug(int a) {
+<span class="fc bfc" id="L45" title="All 2 branches covered.">    	if(a == 5) return true;</span>
+<span class="fc" id="L46">    	return false;</span>
+    }
+    
+    
+    public boolean isTriangle(int a, int b, int c) {
+    	/**
+    	 * TODO: You need to complete this method to determine whether  a
+    	 * triangle is formed or not when given the input edge a, b and c.
+    	 */
+<span class="fc bfc" id="L55" title="All 2 branches covered.">    	if(a &lt;= 0){</span>
+<span class="fc" id="L56">    		return false;</span>
+		}
+<span class="fc bfc" id="L58" title="All 2 branches covered.">    	if(b &lt;= 0){</span>
+<span class="fc" id="L59">    		return false;</span>
+		}
+<span class="fc bfc" id="L61" title="All 2 branches covered.">    	if(c &lt;= 0){</span>
+<span class="fc" id="L62">    		return false;</span>
+		}
+<span class="fc" id="L64">		int[] myArray = {a, b, c};</span>
+<span class="fc" id="L65">		Arrays.sort(myArray);</span>
+		// not use add but use minus
+<span class="fc bfc" id="L67" title="All 2 branches covered.">		if(myArray[2]-myArray[1]&gt;myArray[0]){</span>
+<span class="fc" id="L68">			return true;</span>
+		}else{
+<span class="fc" id="L70">			return false;</span>
+		}
+    }
+    public boolean isBirthday(int year, int month, int day) {
+    	/**
+    	 * TODO: You need to complete this method to determine whether a 
+    	 * legitimate date of birth between 1990/01/01 and 2019/10/01 is 
+    	 * formed or not when given the input year, month and day.
+    	 */
+<span class="fc bfc" id="L79" title="All 4 branches covered.">    	if(1990 &gt; year || year &gt; 2019){</span>
+<span class="fc" id="L80">    		return false;</span>
+		}
+<span class="fc bfc" id="L82" title="All 4 branches covered.">    	if(month &lt; 1 || month &gt;12){</span>
+<span class="fc" id="L83">    		return false;</span>
+		}
+<span class="fc bfc" id="L85" title="All 2 branches covered.">    	if(day &lt; 1)</span>
+<span class="fc" id="L86">    		return false;</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">    	if(month == 2) {</span>
+<span class="fc bfc" id="L88" title="All 4 branches covered.">			if (year % 4 == 0 &amp;&amp; year % 100 != 0) {</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">				if (day &gt; 29) {</span>
+<span class="fc" id="L90">					return false;</span>
+				}
+			} else {
+<span class="fc bfc" id="L93" title="All 2 branches covered.">				if (day &gt; 28) {</span>
+<span class="fc" id="L94">					return false;</span>
+				}
+			}
+		}
+<span class="fc bfc" id="L98" title="All 14 branches covered.">    	else if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){</span>
+<span class="fc bfc" id="L99" title="All 2 branches covered.">    		if(day &gt; 31){</span>
+<span class="fc" id="L100">    			return false;</span>
+			}
+		}else{
+<span class="fc bfc" id="L103" title="All 2 branches covered.">    		if(day &gt; 30){</span>
+<span class="fc" id="L104">    			return false;</span>
+			}
+		}
+    	//up bound
+<span class="fc bfc" id="L108" title="All 2 branches covered.">		if(year == 2019){</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">			if(month &gt; 10)</span>
+<span class="fc" id="L110">				return false;</span>
+<span class="fc bfc" id="L111" title="All 2 branches covered.">			else if(month == 10){</span>
+<span class="fc bfc" id="L112" title="All 2 branches covered.">				if(day != 1){</span>
+<span class="fc" id="L113">					return false;</span>
+				}
+			}else{
+
+			}
+		}
+<span class="fc" id="L119">		return true;</span>
+    }
+    public Double miniCalculator(double a, double b, char op) throws Exception {
+    	/**
+    	 * TODO: You need to complete this method to form a small calculator which 
+    	 * can calculate the formula: &quot;a op b&quot;, the op here can be four basic  
+    	 * operation: &quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;. 
+    	 */
+<span class="fc" id="L127">    	double result = 0.0;</span>
+<span class="fc bfc" id="L128" title="All 5 branches covered.">    	switch (op){</span>
+			case '+':
+<span class="fc" id="L130">				result = a + b;</span>
+<span class="fc bfc" id="L131" title="All 2 branches covered.">				if(result - a != b)</span>
+<span class="fc" id="L132">					throw new Exception(&quot;add overflow&quot;);</span>
+				break;
+			case '-':
+<span class="fc" id="L135">				result = a - b;</span>
+<span class="fc bfc" id="L136" title="All 2 branches covered.">				if(result + b != a)</span>
+<span class="fc" id="L137">					throw new Exception(&quot;minus overflow&quot;);</span>
+				break;
+			case '*':
+<span class="fc" id="L140">				result = a * b;</span>
+<span class="fc bfc" id="L141" title="All 2 branches covered.">				if(result / a != b)</span>
+<span class="fc" id="L142">					throw new Exception(&quot;multiply overflow&quot;);</span>
+				break;
+			case '/':
+<span class="fc bfc" id="L145" title="All 2 branches covered.">				if(b == 0)</span>
+<span class="fc" id="L146">					throw new Exception(&quot;divide zero error&quot;);</span>
+<span class="fc" id="L147">				result = a / b;</span>
+<span class="fc bfc" id="L148" title="All 2 branches covered.">				if(result * b != a){</span>
+<span class="fc" id="L149">					throw new Exception(&quot;divide overflow&quot;);</span>
+				}
+				break;
+			default:
+<span class="fc" id="L153">				throw new Exception(&quot;no such operation&quot;);</span>
+		}
+<span class="fc" id="L155">    	return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>
