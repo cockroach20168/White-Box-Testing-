@@ -1,5 +1,6 @@
 # junit + jacoco  白盒测试训练
-
+## 结果截图
+![image](https://github.com/cockroach20168/White-Box-Testing-/tree/master/IMG/screenshot1.png)
 ## 你需要去了解的
 
 junit、jacoco、maven
